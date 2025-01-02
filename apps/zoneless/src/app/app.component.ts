@@ -24,7 +24,7 @@ import {
 } from '@ng-change-detection-lab/ui';
 
 @Component({
-  selector: 'cdl-zone-app',
+  selector: 'cdl-zoneless-app',
   templateUrl: './app.component.html',
   imports: [DefaultComponent, OnpushComponent],
 })

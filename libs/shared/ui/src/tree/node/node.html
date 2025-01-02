@@ -1,0 +1,29 @@
+<div class="node">
+  <div class="content" #nodeRef>
+    <div class="dirty"></div>
+    <div class="views-to-refresh"></div>
+    {{ cdCheck() }}
+    <p>{{ node()?.type === strategy.Default ? 'Default' : 'OnPush' }}</p>
+    <p>{{ value() }}</p>
+    <p style="display: none">{{ value$ | async }}</p>
+    <syn-context-menu [target]="nodeRef">
+      <button (click)="clicked()">Event</button>
+      <button #updateSignal>Update Signal</button>
+      <button #async>Async Pipe</button>
+      <button #mark>MarkForCheck</button>
+      <button #httpRequestButton>Http request</button>
+      <button #detect>DetectChanges</button>
+    </syn-context-menu>
+  </div>
+
+  @if (node()?.children?.length || 0 > 0) {
+  <div class="children">
+    @for (node of node()?.children; track node) { @if (node.type ===
+    strategy.Default) {
+    <syn-default [node]="node" [value]="value()"></syn-default>
+    } @if (node.type === strategy.OnPush) {
+    <syn-onpush [node]="node" [value]="value()"></syn-onpush>
+    } }
+  </div>
+  }
+</div>
