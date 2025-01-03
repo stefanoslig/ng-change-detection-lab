@@ -20,13 +20,15 @@ import { fromEvent } from 'rxjs';
 import {
   BaseNodeDirective,
   DefaultComponent,
+  FooterComponent,
   OnpushComponent,
 } from '@ng-change-detection-lab/ui';
 
 @Component({
   selector: 'cdl-zoneless-app',
   templateUrl: './app.component.html',
-  imports: [DefaultComponent, OnpushComponent],
+  styleUrl: './app.component.scss',
+  imports: [DefaultComponent, OnpushComponent, FooterComponent],
 })
 export class AppComponent extends BaseNodeDirective implements AfterViewInit {
   private readonly app = inject(ApplicationRef);

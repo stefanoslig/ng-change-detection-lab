@@ -21,12 +21,13 @@ import {
   BaseNodeDirective,
   DefaultComponent,
   OnpushComponent,
+  FooterComponent,
 } from '@ng-change-detection-lab/ui';
 
 @Component({
   selector: 'cdl-zone-app',
   templateUrl: './app.component.html',
-  imports: [DefaultComponent, OnpushComponent],
+  imports: [DefaultComponent, OnpushComponent, FooterComponent],
 })
 export class AppComponent extends BaseNodeDirective implements AfterViewInit {
   private readonly app = inject(ApplicationRef);
