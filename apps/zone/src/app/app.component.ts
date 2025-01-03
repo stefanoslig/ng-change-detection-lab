@@ -41,9 +41,6 @@ export class AppComponent extends BaseNodeDirective implements AfterViewInit {
     viewChild<ElementRef<HTMLElement>>('setTimeoutButton');
   private readonly httpRequestButton =
     viewChild<ElementRef<HTMLElement>>('httpRequestButton');
-  private readonly checkboxZoneDisabled = viewChild<ElementRef<HTMLElement>>(
-    'checkboxZoneDisabled'
-  );
 
   protected selectedTree = signal<TreeNode>(TreeSelection[0]);
   protected select(event: any) {
@@ -73,13 +70,5 @@ export class AppComponent extends BaseNodeDirective implements AfterViewInit {
     fromEvent(this.httpRequestButton()!.nativeElement, 'click')
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => this.httpRequest());
-
-    fromEvent(this.checkboxZoneDisabled()!.nativeElement, 'click')
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(() =>
-        document
-          .querySelector('.tree-container')
-          ?.classList.toggle('zone-disabled')
-      );
   }
 }

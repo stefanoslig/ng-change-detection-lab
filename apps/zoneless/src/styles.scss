@@ -342,24 +342,6 @@ footer {
   justify-content: center;
 }
 
-#tree-zone-enabled {
-  display: block;
-}
-
-#tree-zone-disabled {
-  display: none;
-}
-
-.zone-disabled {
-  #tree-zone-enabled {
-    display: none;
-  }
-
-  #tree-zone-disabled {
-    display: block;
-  }
-}
-
 .primary-btn {
   cursor: pointer;
   border: none;
