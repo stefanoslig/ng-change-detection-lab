@@ -27,6 +27,7 @@ import {
 @Component({
   selector: 'cdl-zone-app',
   templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
   imports: [DefaultComponent, OnpushComponent, FooterComponent],
 })
 export class AppComponent extends BaseNodeDirective implements AfterViewInit {
