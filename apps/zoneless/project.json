@@ -20,6 +20,11 @@
           {
             "glob": "**/*",
             "input": "apps/zoneless/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/shared/ui/src/assets",
+            "output": "assets/shared/ui"
           }
         ],
         "styles": ["apps/zoneless/src/styles.scss"],

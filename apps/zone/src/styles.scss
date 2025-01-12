@@ -43,19 +43,13 @@ body {
   }
 }
 
-header {
-  margin: 1rem 1rem 2rem;
-  text-align: center;
-
-  h1 {
-    margin-bottom: 1rem;
-  }
-
+main {
   .actions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 
     button {
       font-size: 1rem;
@@ -69,6 +63,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .tree-container {

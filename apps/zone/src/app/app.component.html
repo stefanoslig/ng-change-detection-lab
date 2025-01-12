@@ -1,14 +1,8 @@
 <header>
-  <h1>Angular Change Detection Visualizer</h1>
-  <h2>zone.js enabled</h2>
-  <h3>
-    <a
-      href="https://ng-change-detection-lab-zoneless.vercel.app/"
-      target="_blank"
-      >zoneless version</a
-    >
-  </h3>
+  <syn-navbar [zoneEnabled]="true" />
+</header>
 
+<main>
   <div class="actions">
     <div class="actions">
       <button class="primary-btn" [attr.text]="'App tick'" #tickButton>
@@ -26,9 +20,6 @@
       </button>
     </div>
   </div>
-</header>
-
-<main>
   <div
     class="tree-container display-dirty-status display-dirty display-views-to-refresh"
   >

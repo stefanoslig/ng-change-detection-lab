@@ -1,0 +1,33 @@
+<nav class="navbar-wrapper">
+  <div class="left-side">
+    <img class="logo" src="assets/shared/ui/angular_black.png" />
+    <div>
+      <h1>Change Detection Lab</h1>
+      @if(zoneEnabled()) {
+      <h5>zone.js enabled</h5>
+      } @else {
+      <h5>zone.js disabled</h5>
+      }
+    </div>
+  </div>
+  <div class="right-side">
+    <span class="version">v 19.0.5 </span>
+    @if(zoneEnabled()) {
+    <a
+      class="other-version"
+      href="https://ng-change-detection-lab-zoneless.vercel.app/"
+      target="_blank"
+    >
+      zoneless version</a
+    >
+    } @else {
+    <a
+      class="other-version"
+      href="https://ng-change-detection-lab-zone.vercel.app/"
+      target="_blank"
+    >
+      zone.js version</a
+    >
+    }
+  </div>
+</nav>

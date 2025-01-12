@@ -1,0 +1,43 @@
+.navbar-wrapper {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(0deg, #eee 0%, #fbe2e2 100%);
+
+  .svg-container {
+    display: flex;
+  }
+
+  .left-side {
+    display: flex;
+    padding-left: 1rem;
+    align-items: center;
+
+    .logo {
+      height: 2.8rem;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+
+    .version {
+      margin-right: 1rem;
+      opacity: 0.8;
+    }
+
+    .other-version {
+        text-decoration: none;
+        border-width: 1px;
+        padding: 3px;
+        border-style: solid;
+        border-image: linear-gradient(to right, #8514f5, #f637e3) 1;
+    }
+  }
+}
