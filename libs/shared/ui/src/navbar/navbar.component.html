@@ -12,13 +12,20 @@
   </div>
   <div class="right-side">
     <span class="version">v 19.0.5 </span>
+    <button #openSidebarBtn class="nav-btn">
+      Cheat Sheet
+      <img
+        style="width: 20px; margin-left: 3px"
+        src="assets/shared/ui/read.png"
+      />
+    </button>
     @if(zoneEnabled()) {
     <a
       class="other-version"
       href="https://ng-change-detection-lab-zoneless.vercel.app/"
       target="_blank"
     >
-      zoneless version</a
+      Zoneless Version</a
     >
     } @else {
     <a
@@ -26,7 +33,7 @@
       href="https://www.change-detection.guide/"
       target="_blank"
     >
-      zone.js version</a
+      Zone.js Version</a
     >
     }
   </div>

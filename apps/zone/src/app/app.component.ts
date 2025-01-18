@@ -24,7 +24,6 @@ import {
   FooterComponent,
   NavbarComponent,
   SidePanelComponent,
-  SidePanelService,
 } from '@ng-change-detection-lab/ui';
 
 @Component({
@@ -42,7 +41,6 @@ export class AppComponent extends BaseNodeDirective implements AfterViewInit {
   private readonly app = inject(ApplicationRef);
   private readonly http = inject(HttpClient);
   private readonly destroyRef = inject(DestroyRef);
-  private readonly sidePanelService = inject(SidePanelService);
 
   protected ChangeDetectionStrategy = ChangeDetectionStrategy;
 
@@ -81,9 +79,5 @@ export class AppComponent extends BaseNodeDirective implements AfterViewInit {
     fromEvent(this.httpRequestButton()!.nativeElement, 'click')
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(() => this.httpRequest());
-  }
-
-  open() {
-    this.sidePanelService.open(SidePanelComponent);
   }
 }

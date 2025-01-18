@@ -33,11 +33,30 @@
     }
 
     .other-version {
-        text-decoration: none;
-        border-width: 1px;
-        padding: 3px;
-        border-style: solid;
-        border-image: linear-gradient(to right, #8514f5, #f637e3) 1;
+      display: flex;
+      align-items: center;
+      color: black;
+      height: 20px;
+      font-size: .8rem;
+      text-decoration: none;
+      border-width: 1px;
+      padding: 3px;
+      border-style: solid;
+      border-image: linear-gradient(to right, #8514f5, #f637e3) 1;
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      color: black;
+      font-size: .8rem;
+      cursor: pointer;
+      background: none;
+      margin-right: 5px;
+      border-width: 1px;
+      padding: 3px;
+      border-style: solid;
+      border-image: linear-gradient(to right, #8514f5, #f637e3) 1;
     }
   }
 }
