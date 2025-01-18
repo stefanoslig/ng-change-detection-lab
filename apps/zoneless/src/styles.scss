@@ -58,6 +58,12 @@ main {
   }
 }
 
+select {
+  font-size: 0.9rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -98,15 +104,15 @@ main {
 		color: transparent;
 		margin-block: 0;
 
-		transition: background-position .8s ease-out;
+		transition: background-position 1s ease-out;
 		background-size: 200% 100%;
 		background-position: 100% 0%;
 		position: relative;
 
 		&::after {
 			content: "";
-			width: 90px;
-			height: 60px;
+			width: 6.5rem;
+      height: 4.5rem;
 			background-color: #fffcfc;
 			display: block;
 			position: absolute;
@@ -119,11 +125,14 @@ main {
     cursor: pointer;
     position: relative;
     align-self: center;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     justify-items: center;
     row-gap: 0.5em;
     font-size: 1em;
-    padding: 0.5em 0.75em;
+    width: 6.5rem;
+    height: 4.5rem;
     border-radius: 0.25em;
 	  border: 1px solid var(--view-color-background);
     text-align: center;

@@ -52,7 +52,7 @@ export class AppComponent extends BaseNodeDirective implements AfterViewInit {
 
   protected selectedTree = signal<TreeNode>(TreeSelection[0]);
   protected select(event: any) {
-    if (event.target.value === '4') {
+    if (event.target.value === '3') {
       this.selectedTree.set(generateRandomTree(4, 2));
     } else {
       this.selectedTree.set(TreeSelection[event.target.value]);

@@ -9,9 +9,25 @@ const tree: TreeNode = {
       children: [
         {
           type: ChangeDetectionStrategy.OnPush,
+          children: [
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+          ],
         },
         {
           type: ChangeDetectionStrategy.OnPush,
+          children: [
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+          ],
         },
       ],
     },
@@ -20,9 +36,25 @@ const tree: TreeNode = {
       children: [
         {
           type: ChangeDetectionStrategy.OnPush,
+          children: [
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+          ],
         },
         {
           type: ChangeDetectionStrategy.OnPush,
+          children: [
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+            {
+              type: ChangeDetectionStrategy.OnPush,
+            },
+          ],
         },
       ],
     },

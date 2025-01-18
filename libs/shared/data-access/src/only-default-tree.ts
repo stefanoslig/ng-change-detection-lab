@@ -9,9 +9,25 @@ const tree: TreeNode = {
       children: [
         {
           type: ChangeDetectionStrategy.Default,
+          children: [
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+          ],
         },
         {
           type: ChangeDetectionStrategy.Default,
+          children: [
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+          ],
         },
       ],
     },
@@ -20,9 +36,25 @@ const tree: TreeNode = {
       children: [
         {
           type: ChangeDetectionStrategy.Default,
+          children: [
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+          ],
         },
         {
           type: ChangeDetectionStrategy.Default,
+          children: [
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+            {
+              type: ChangeDetectionStrategy.Default,
+            },
+          ],
         },
       ],
     },
