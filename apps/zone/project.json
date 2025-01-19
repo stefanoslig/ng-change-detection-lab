@@ -27,7 +27,7 @@
             "output": "assets/shared/ui"
           }
         ],
-        "styles": ["apps/zone/src/styles.scss"],
+        "styles": ["apps/zone/src/styles.scss", "node_modules/github-markdown-css/github-markdown-light.css"],
         "scripts": []
       },
       "configurations": {

@@ -27,6 +27,8 @@ export class SidePanelService {
     const portal = new ComponentPortal(component, null);
     overlayRef.attach(portal);
     this.overlayRef = overlayRef;
+
+    document.body.classList.add('no-scroll');
   }
 
   close(): void {
@@ -34,5 +36,6 @@ export class SidePanelService {
       this.overlayRef.dispose();
       this.overlayRef = null;
     }
+    document.body.classList.remove('no-scroll');
   }
 }
