@@ -62,6 +62,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
         position: absolute;
         right: 0;
         width: 40%;
+        max-width: 800px;
         background: #ffffff;
         height: 100%;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
