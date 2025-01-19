@@ -35,7 +35,7 @@ Angular relies on a library called `Zone.js` to invoke a change detection cycle.
 
 > A Signal is a wrapper around a value that notifies interested consumers when the value changes.
 
-## The Producer/Consumer Abstraction
+### The Producer/Consumer Abstraction
 
 The reactivity model in Angular using `Signals` is based on two abstractions: `Producers` and `Consumers`.
 
@@ -44,12 +44,12 @@ The reactivity model in Angular using `Signals` is based on two abstractions: `P
 
 In this sense, we can think of consumers and producers as interconnected nodes, forming a `dependency graph` that describes the reactive behavior of a system. In an Angular component, the View acts as a consumer. When a producer, like a Signal, is accessed within the View, the consumer begins tracking it. When the value of the Signal changes, the reactive consumer of the template is notified. In that case, two things happen:
 
-1. The View is marked with the _`RefreshView`_ flag.
-2. The _`markAncestorsForTraversal`_ function is called, marking all ancestors of the View with the _`HasChildViewsToRefresh`_ flag.
+1. The View is marked with the **`RefreshView`** flag.
+2. The **`markAncestorsForTraversal`** function is called, marking all ancestors of the View with the **`HasChildViewsToRefresh`** flag.
 
-## Global/Targeted Change Detection
+### Global/Targeted Change Detection
 
-When `Zone.js` triggers a change detection cycle, Angular traverses the component tree from top to bottom, as described earlier. However, this traversal always happens in one of two modes: _`Global`_ or _`Targeted`_.
+When `Zone.js` triggers a change detection cycle, Angular traverses the component tree from top to bottom, as described earlier. However, this traversal always happens in one of two modes: **`Global`** or **`Targeted`**.
 
 In an Angular app using `Zone.js`, the traversal of the component tree begins in `Global` mode by default. In this mode, as previously discussed:
 
