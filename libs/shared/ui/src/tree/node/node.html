@@ -4,12 +4,13 @@
     <div class="views-to-refresh"></div>
     {{ cdCheck() }}
     <p>{{ node()?.type === strategy.Default ? 'Default' : 'OnPush' }}</p>
-    <p>{{ value() }}</p>
+    <p style="display: none">{{ valueNoPassedAsInput() }}</p>
     <p style="display: none">{{ value$ | async }}</p>
     <syn-context-menu [target]="nodeRef">
       <button (click)="clicked()">Event</button>
       <button #updateSignal>Update Signal</button>
       <button #async>Async Pipe</button>
+      <button #updateInput>Update Input</button>
       <button #mark>MarkForCheck</button>
       <button #httpRequestButton>Http request</button>
       <button #detect>DetectChanges</button>

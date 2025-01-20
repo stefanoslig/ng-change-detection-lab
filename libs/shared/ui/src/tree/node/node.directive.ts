@@ -1,12 +1,13 @@
 import {
   ChangeDetectorRef,
   inject,
-  model,
   Directive,
   ElementRef,
   viewChild,
   AfterViewInit,
   DestroyRef,
+  signal,
+  model,
 } from '@angular/core';
 import { BaseNodeDirective } from './node.base';
 import { Subject, fromEvent } from 'rxjs';
@@ -36,12 +37,15 @@ export abstract class NodeDirective
 
   private readonly updateSignal =
     viewChild<ElementRef<HTMLElement>>('updateSignal');
+  private readonly updateInput =
+    viewChild<ElementRef<HTMLElement>>('updateInput');
   private readonly async = viewChild<ElementRef<HTMLElement>>('async');
   private readonly mark = viewChild<ElementRef<HTMLElement>>('mark');
   private readonly detect = viewChild<ElementRef<HTMLElement>>('detect');
   private readonly httpRequestButton =
     viewChild<ElementRef<HTMLElement>>('httpRequestButton');
 
+  public readonly valueNoPassedAsInput = signal<number>(0);
   public readonly value = model<number>(0);
   protected readonly value$ = new Subject();
 
@@ -56,6 +60,13 @@ export abstract class NodeDirective
   ngAfterViewInit() {
     this.zone.runOutsideAngular(() => {
       fromEvent(this.updateSignal()!.nativeElement, 'click')
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          this.valueNoPassedAsInput.update((value) => value + 1);
+          this.traverseToRoot(this.el);
+        });
+
+      fromEvent(this.updateInput()!.nativeElement, 'click')
         .pipe(takeUntilDestroyed(this.destroyRef))
         .subscribe(() => {
           this.value.update((value) => value + 1);
