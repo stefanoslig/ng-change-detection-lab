@@ -6,6 +6,7 @@
     <p>{{ node()?.type === strategy.Default ? 'Default' : 'OnPush' }}</p>
     <p style="display: none">{{ valueNoPassedAsInput() }}</p>
     <p style="display: none">{{ value$ | async }}</p>
+    <p>{{ value() }}</p>
     <syn-context-menu [target]="nodeRef">
       <button (click)="clicked()">Event</button>
       <button #updateSignal>Update Signal</button>
