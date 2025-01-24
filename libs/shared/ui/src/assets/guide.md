@@ -60,3 +60,5 @@ In an Angular app using `Zone.js`, the traversal of the component tree begins in
 1. Visit components but will not perform change detection for components with the `Default` strategy or those marked as `dirty + OnPush`.
 2. Perform change detection only for components marked with the `RefreshView` flag.
 3. Switch back to `Global` mode when it reaches a component marked with the `RefreshView` flag.
+
+![global-targeted-mode](assets/shared/ui/global-targeted-mode.png)

@@ -23,7 +23,6 @@ import {
   OnpushComponent,
   FooterComponent,
   NavbarComponent,
-  SidePanelComponent,
 } from '@ng-change-detection-lab/ui';
 
 @Component({
