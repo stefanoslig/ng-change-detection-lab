@@ -12,10 +12,17 @@
 }
 
 .centered-text {
+  max-width: 45rem;
   position: absolute;
-  top: 60%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: rgb(215, 213, 213);
+  text-align: center;
+
+
+  & a {
+    color: rgb(215, 213, 213);
+  }
 }
