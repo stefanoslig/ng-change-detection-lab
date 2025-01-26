@@ -8,11 +8,14 @@ import {
   DestroyRef,
   signal,
   model,
+  NgZone,
+  ChangeDetectionStrategy,
+  input,
 } from '@angular/core';
-import { BaseNodeDirective } from './node.base';
 import { Subject, fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HttpClient } from '@angular/common/http';
+import { TreeNode } from '@ng-change-detection-lab/data-access';
 
 type CdStatus =
   | 'HasChildViewsToRefresh'
@@ -22,18 +25,21 @@ type CdStatus =
   | null;
 
 @Directive()
-export abstract class NodeDirective
-  extends BaseNodeDirective
-  implements AfterViewInit
-{
+export abstract class NodeDirective implements AfterViewInit {
   private readonly cd = inject(ChangeDetectorRef);
   private readonly destroyRef = inject(DestroyRef);
   private readonly http = inject(HttpClient);
+  private readonly el = inject(ElementRef<HTMLElement>);
+  private readonly zone = inject(NgZone);
+
+  public readonly node = input<TreeNode>();
 
   private readonly parentNode = inject(NodeDirective, {
     optional: true,
     skipSelf: true,
   });
+  protected readonly strategy = ChangeDetectionStrategy;
+  private timeout?: any;
 
   private readonly updateSignal =
     viewChild<ElementRef<HTMLElement>>('updateSignal');
@@ -55,6 +61,31 @@ export abstract class NodeDirective
 
   protected httpRequest() {
     this.http.get('', { responseType: 'text' }).subscribe();
+  }
+
+  protected cdCheck() {
+    this.zone.runOutsideAngular(() => {
+      const nodeElement = this.el.nativeElement.querySelector('.node');
+      nodeElement.classList.add('checked');
+      this.timeout && clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        nodeElement.classList.remove('checked');
+        this.timeout = undefined;
+      }, 1000);
+    });
+  }
+
+  ngDoCheck() {
+    this.zone.runOutsideAngular(() => {
+      setTimeout(() => {
+        this.el.nativeElement
+          .querySelector('.views-to-refresh')
+          ?.classList.remove('enabled');
+        this.el.nativeElement
+          .querySelector('.dirty')
+          ?.classList.remove('enabled');
+      }, 1000);
+    });
   }
 
   ngAfterViewInit() {

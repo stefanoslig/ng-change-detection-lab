@@ -18,7 +18,6 @@ import {
 } from '@ng-change-detection-lab/data-access';
 import { fromEvent } from 'rxjs';
 import {
-  BaseNodeDirective,
   DefaultComponent,
   OnpushComponent,
   FooterComponent,
@@ -36,7 +35,7 @@ import {
     NavbarComponent,
   ],
 })
-export class AppComponent extends BaseNodeDirective implements AfterViewInit {
+export class AppComponent implements AfterViewInit {
   private readonly app = inject(ApplicationRef);
   private readonly http = inject(HttpClient);
   private readonly destroyRef = inject(DestroyRef);

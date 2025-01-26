@@ -11,7 +11,7 @@
   --view-color-check-enabled: #f0a2b9;
   --view-color-check-disabled: #30303018;
 
-  --tree-line-color: #303030;
+  --tree-line-color: #949191;
   --tree-line-width: 0.125em;
   --tree-node-margin: 2em;
   --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
@@ -43,6 +43,12 @@ body {
   }
 }
 
+select {
+  font-size: 0.9rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
 main {
   .actions {
     display: flex;
@@ -56,12 +62,6 @@ main {
       margin: 0.5rem;
     }
   }
-}
-
-select {
-  font-size: 0.9rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
 }
 
 main {
@@ -126,9 +126,9 @@ main {
     position: relative;
     align-self: center;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
     row-gap: 0.5em;
     font-size: 1em;
     width: 6.5rem;
@@ -244,10 +244,10 @@ main {
 
   & .dot-views-to-refresh {
     position: absolute;
-    bottom: 0.25em;
-    right: 0.25em;
-    height: 0.5em;
-    width: 0.5em;
+    bottom: 0.2em;
+    right: 0;
+    height: 0.8em;
+    width: 0.8em;
     background-color: #0546ff;
     border-radius: 50%;
     display: block;
@@ -255,10 +255,10 @@ main {
 
   & .dot-dirty {
     position: absolute;
-    bottom: 0.25em;
-    right: 0.25em;
-    height: 0.5em;
-    width: 0.5em;
+    bottom: 0.2em;
+    right: 0;
+    height: 0.8em;
+    width: 0.8em;
     background-color: var(--view-color-check-enabled);
     border-radius: 50%;
     display: block;
@@ -271,8 +271,8 @@ main {
       position: absolute;
       bottom: 0.25em;
       right: 0.25em;
-      height: 0.5em;
-      width: 0.5em;
+      height: 0.8em;
+      width: 0.8em;
       background-color: var(--view-color-check-disabled);
       border-radius: 50%;
       display: block;
@@ -287,8 +287,8 @@ main {
       position: absolute;
       bottom: 0.25em;
       right: 0.25em;
-      height: 0.5em;
-      width: 0.5em;
+      height: 0.8em;
+      width: 0.8em;
       background-color: var(--view-color-check-disabled);
       border-radius: 50%;
       display: block;
