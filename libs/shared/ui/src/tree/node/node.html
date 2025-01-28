@@ -3,7 +3,11 @@
     <div class="dirty"></div>
     <div class="views-to-refresh"></div>
     {{ cdCheck() }}
-    <p>{{ node()?.type === strategy.Default ? 'Default' : 'OnPush' }}</p>
+    <p
+      [ngClass]="node()?.type === strategy.Default ? 'on-push-strategy-text' : 'default-strategy-text'"
+    >
+      {{ node()?.type === strategy.Default ? 'Default' : 'OnPush' }}
+    </p>
     <p style="display: none">{{ valueNoPassedAsInput() }}</p>
     <p style="display: none">{{ value$ | async }}</p>
     <p>{{ value() }}</p>

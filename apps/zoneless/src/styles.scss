@@ -126,10 +126,8 @@ main {
     position: relative;
     align-self: center;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
-    row-gap: 0.5em;
+    justify-content: flex-start;
     font-size: 1em;
     width: 6.5rem;
     height: 4.5rem;
