@@ -45,7 +45,7 @@
     "e2e-ci--**/*": {
       "dependsOn": ["^build"]
     },
-    "@nx/vite:test": {
+    "@nx/vitest:test": {
       "cache": true,
       "inputs": ["default", "^production"]
     }
@@ -73,7 +73,7 @@
     },
     "@nx/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "vitest"
+      "unitTestRunner": "vitest-analog"
     },
     "@nx/angular:component": {
       "style": "css",
